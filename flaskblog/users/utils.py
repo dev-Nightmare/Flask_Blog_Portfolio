@@ -12,15 +12,15 @@ def update_picture(form_picture, old_filename):
     print(f'print1 {form_picture.filename}')
     print(f'print2 {old_filename}')
     picture_filename = random_hex + f_ext
-    picture_path = os.path.join(current_app.root_path, "static//profile_pics", picture_filename)
+    picture_path = os.path.join(current_app.root_path, 'static//profile_pics', picture_filename)
 
     output_size = (125, 125)
     img = Image.open(form_picture)
     img.thumbnail(output_size)
     img.save(picture_path)
 
-    if old_filename != "default.jpg":
-        picture_path = os.path.join(current_app.root_path, "static//profile_pics", old_filename)
+    if old_filename != 'default.jpg':
+        picture_path = os.path.join(current_app.root_path, 'static//profile_pics', old_filename)
         if os.path.exists(picture_path):
             os.remove(picture_path)
 
